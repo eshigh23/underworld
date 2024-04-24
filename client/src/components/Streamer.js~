@@ -1,0 +1,44 @@
+import React, { useState } from 'react';
+import { Howl, Howler } from 'howler';
+
+const Streamer = () => {
+    const [isPlaying, setIsPlaying] = useState("");
+    const sound = new Howl({
+        src: ['audio.wav'],
+        html5: true,  // Enable HTML5 Audio to force audio streaming
+        onplay: () => {
+            setIsPlaying(true);
+        },
+        onpause: () => {
+            setIsPlaying(false);
+        },
+        onend: () => {
+            setIsPlaying(false);
+        }
+    });
+    var song = null;
+    var pos = 0;
+
+    const togglePlayPause = () => {
+        if (isPlaying) {
+            pos = sound.pause(song);
+        } else {
+	    if(song){
+		song = sound.play(song);
+	    }
+	    else{
+		song = sound.play();
+	    }
+        }
+    };
+
+    return (
+        <div>
+            <button onClick={togglePlayPause}>
+                {isPlaying ? 'Pause' : 'Play'}
+            </button>
+        </div>
+    );
+};
+
+export default Streamer;
