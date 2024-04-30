@@ -1,48 +1,31 @@
 import React, { useState } from 'react';
 import { Howl } from 'howler';
 
+let sound = new Howl({
+    src: ['audio.wav'],
+    html5: true,  // Enable HTML5 Audio to force audio streaming
+});
+
 const Streamer = () => {
     var [isPlaying, setIsPlaying] = useState(false);
-    var sound = new Howl({
-        src: ['audio.wav'],
-        html5: true,  // Enable HTML5 Audio to force audio streaming
-        onplay: () => {
-            setIsPlaying(true);
-        },
-        onpause: () => {
-            setIsPlaying(false);
-        },
-        onend: () => {
-            setIsPlaying(false);
-        }
-    });
-    var song = null;
+
+    var [song, setSong] = useState(null);
     
     const togglePlayPause = () => {
 	console.log("toggle");
-        /*if (sound.playing(song)) {
-            sound.pause(song);
-	    console.log("Song paused.");
-        } else {
-	    if(song != null){
-		song = sound.play(song);
-		console.log("Song resumed.");
-	    }
-	    else{
-		song = sound.play();
-		console.log("Song started.");
-	    }
-        }*/
 
 	if(song == null){
-	    song = sound.play();
+	    setSong(sound.play());
+	    setIsPlaying(true);
 	}
 	else{
 	    if(sound.playing(song)){
 		sound.pause(song);
+		setIsPlaying(false);
 	    }
 	    else{
 		sound.play(song);
+		setIsPlaying(true);
 	    }
 	}
     };
