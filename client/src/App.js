@@ -1,6 +1,10 @@
 import React, { useEffect, useState} from 'react';
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
-import Streamer from './components/Streamer.js';
+import Header from './components/Header.js'
+import Home from './components/Home.js'
+import Landing from './components/Landing.js'
+import Explore from './components/Explore.js'
 
 export default function App(){
 
@@ -33,12 +37,30 @@ export default function App(){
 
 	
       </div>*/
-      <div className="App">
-      <header className="App-header">
-        <h1>Underwörld</h1>
-        <Streamer />
-      </header>
-    </div>
+
+      <Router>
+        <div className="App">
+          <header>
+            <Header />
+          </header>
+          <Routes>
+              <Route
+                  path="/Home"
+                  element={<Home />}
+              ></Route>
+              <Route
+                  path="/Explore"
+                  element={<Explore />}
+              ></Route>
+              <Route
+                  path="/"
+                  element={<Landing />}
+              ></Route>
+          </Routes>
+        </div>
+      </Router>
+
+
 
   )
 }
