@@ -8,25 +8,26 @@ import Explore from './components/Explore.js'
 
 export default function App(){
 
-  const [backendData, setBackendData] = useState([{}])
 
   /* fetch (dummy) info from server (server.js) and update backendData var with the data
      defined proxy address (localhost:5002) in client package.json, letting us use relative address
      I changed port to 5002 bc im alr using 5000 -Tommy
   */
-  useEffect(() => {
-    fetch("/api").then(
-      response => response.json()
-    ).then(
-      data => {
-        setBackendData(data)
-      }
-    )
-  }, [])
+  // useEffect(() => {
+  //   fetch("/api").then(
+  //     response => response.json()
+  //   ).then(
+  //     data => {
+  //       setBackendData(data)
+  //     }
+  //   )
+  // }, [])
 
 
   return(
-      /*<div>
+    <div>
+
+      {/* <div>
       {( typeof backendData.users === 'undefined') ? (
         <p> Loading... </p>
       ) : (
@@ -34,9 +35,7 @@ export default function App(){
           <p key={i}> {user} </p>
         ))
       )}
-
-	
-      </div>*/
+      </div> */}
 
       <Router>
         <div className="App">
@@ -60,7 +59,7 @@ export default function App(){
         </div>
       </Router>
 
-
+    </div>
 
   )
 }
