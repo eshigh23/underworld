@@ -39,12 +39,9 @@ export default function App(){
 
       <Router>
         <div className="App">
-          <header>
-            <Header />
-          </header>
           <Routes>
               <Route
-                  path="/Home"
+                  path="/"
                   element={<Home />}
               ></Route>
               <Route
@@ -52,7 +49,7 @@ export default function App(){
                   element={<Explore />}
               ></Route>
               <Route
-                  path="/"
+                  path="/Landing"
                   element={<Landing />}
               ></Route>
           </Routes>
