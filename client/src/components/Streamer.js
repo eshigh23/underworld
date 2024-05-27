@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Howl } from 'howler';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+import "../css/Streamer.css";
 
 let sound = new Howl({
     src: ['audio.wav'],
@@ -32,8 +35,8 @@ const Streamer = () => {
 
     return (
         <div>
-            <button onClick={togglePlayPause}>
-                {isPlaying ? 'Pause' : 'Play'}
+            <button className="play-pause-btn" onClick={togglePlayPause}>
+		<FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
             </button>
 	    <h1>
 		{song ? song : 'NULL'}

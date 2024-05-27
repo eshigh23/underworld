@@ -1,0 +1,12 @@
+.play-pause-btn {
+    font-size: 36px; /* Larger font size for the icon */
+    border: none;
+    background-color: transparent; /* Transparent background */
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+    color: #FFFFFF; /* Set the color of the icon */
+}
+.play-pause-btn:hover {
+    opacity: 0.8;
+}
