@@ -1,17 +1,31 @@
 .sidebar {
     padding: 1rem;
-    background-color: #1a1a1a;
     color: white;
+    display: flex;
+    flex-direction: column; /* Stacks items vertically */
+    align-items: center; /* Centers items horizontally in a flex container */
+    justify-content: flex-start; /* Centers items vertically in the container */
+    height: 100%; /* Ensures the sidebar takes full height of its container */
+    background-color: #111111; /* Background color for visibility */
 }
-
+.sidebar-item {
+    margin-bottom: 10px; /* Adds space between items */
+    width: 100%; /* Optional: Makes each item take full width of the sidebar */
+    text-align: center; /* Ensures text or content inside each item is centered */
+}
 .now-playing, .recommended {
     margin-bottom: 20px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.1rem;
 }
 
 .recommendation {
     margin-top: 10px;
+    width: 100%;
+    text-align: center;
 }
 
 .small {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
 }
