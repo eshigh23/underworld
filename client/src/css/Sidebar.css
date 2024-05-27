@@ -1,0 +1,17 @@
+.sidebar {
+    padding: 1rem;
+    background-color: #1a1a1a;
+    color: white;
+}
+
+.now-playing, .recommended {
+    margin-bottom: 20px;
+}
+
+.recommendation {
+    margin-top: 10px;
+}
+
+.small {
+    font-size: 0.8rem;
+}

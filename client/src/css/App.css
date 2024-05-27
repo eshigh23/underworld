@@ -1,0 +1,21 @@
+.App {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.main-layout {
+    display: flex;
+    flex: 1;  /* Takes up all available space */
+}
+
+.content-area {
+    flex-grow: 1; /* Allows this area to expand and take remaining space */
+    padding: 20px; /* Optional for spacing */
+}
+
+.sidebar {
+    width: 250px; /* Fixed width for sidebar */
+    flex-shrink: 0; /* Prevents sidebar from shrinking */
+    background-color: #2c2c2c; /* Just an example background color */
+}

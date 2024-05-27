@@ -1,0 +1,12 @@
+import React from 'react';
+
+function NewReleases() {
+    return (
+        <div>
+            <h2>New Releases By Artists You Follow</h2>
+            {/* Grid or list of new release items */}
+        </div>
+    );
+}
+
+export default NewReleases;

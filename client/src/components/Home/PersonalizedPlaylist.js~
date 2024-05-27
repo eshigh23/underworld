@@ -1,0 +1,12 @@
+import React from 'react';
+
+function PersonalizedPlaylist() {
+    return (
+        <div>
+            <h2>Your Personalized Playlist</h2>
+            {/* Carousel or slider of playlists */}
+        </div>
+    );
+}
+
+export default PersonalizedPlaylist;
