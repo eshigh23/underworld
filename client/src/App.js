@@ -13,15 +13,17 @@ export default function App(){
      defined proxy address (localhost:5002) in client package.json, letting us use relative address
      I changed port to 5002 bc im alr using 5000 -Tommy
   */
-  // useEffect(() => {
-  //   fetch("/api").then(
-  //     response => response.json()
-  //   ).then(
-  //     data => {
-  //       setBackendData(data)
-  //     }
-  //   )
-  // }, [])
+    /*const [data, setBackendData] = useState({});
+
+    useEffect(() => {
+	fetch("/api").then(
+            response => response.json()
+	).then(
+            data => {
+		setBackendData(data)
+            }
+	)
+    }, []);*/
 
 
   return(
