@@ -1,18 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Howl } from 'howler';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
 import "../css/Streamer.css";
 
-let sound = new Howl({
-    src: ['audio.wav'],
-    html5: true,  // Enable HTML5 Audio to force audio streaming
-});
+let sound;
 
 const Streamer = () => {
     var [isPlaying, setIsPlaying] = useState(false);
 
     var [song, setSong] = useState(null);
+
+    useEffect(() => {
+	// Initialize Howl instance
+	sound = new Howl({
+	    src: ['audio.wav'],
+	    html5: true,
+	    onend: () => {
+		console.log('Audio finished playing');
+		setIsPlaying(false); // Update state to change button to play
+	    }
+	});
+
+	return () => {
+	    // Cleanup Howl instance on component unmount
+	    sound.unload();
+	};
+    }, []);
     
     const togglePlayPause = () => {
 	console.log("toggle");
