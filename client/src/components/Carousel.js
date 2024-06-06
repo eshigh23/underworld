@@ -1,0 +1,37 @@
+// Carousel.jsx
+import React, { useState } from 'react';
+import '../css/Carousel.css';
+
+const Carousel = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+  };
+
+  return (
+    <div className="carousel">
+      <button className="prev" onClick={prevSlide}>&#10094;</button>
+      <div className="carousel-container">
+        <div className="carousel-slide" style={{ transform: `translateX(-${currentIndex * 220}px)` }}>
+          {images.map((image, index) => (
+            <div key={index} className="carousel-item">
+              <img src={image.src} alt={`Slide ${index + 1}`} />
+              <div className="caption">
+                <p>{image.title}</p>
+                <p>{image.artist}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <button className="next" onClick={nextSlide}>&#10095;</button>
+    </div>
+  );
+};
+
+export default Carousel;
