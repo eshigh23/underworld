@@ -8,7 +8,17 @@ function NewReleases() {
 	{ src: 'hawaii.jpg', title: 'i know u been stressed', artist: 'bryce hase' },
 	{ src: 'hawaii.jpg', title: 'break away', artist: 'SB Hunt' },
 	{ src: 'hawaii.jpg', title: 'sorry not sorry', artist: 'H' },
-	{ src: 'hawaii.jpg', title: 'feel the same', artist: 'lil biscuit' },    ];
+	{ src: 'hawaii.jpg', title: 'feel the same', artist: 'lil biscuit' },
+     { src: 'hawaii.jpg', title: 'I Guess It’s Fine', artist: 'Roan' },
+	{ src: 'hawaii.jpg', title: 'i know u been stressed', artist: 'bryce hase' },
+	{ src: 'hawaii.jpg', title: 'break away', artist: 'SB Hunt' },
+	{ src: 'hawaii.jpg', title: 'sorry not sorry', artist: 'H' },
+	{ src: 'hawaii.jpg', title: 'feel the same', artist: 'lil biscuit' },
+     { src: 'hawaii.jpg', title: 'I Guess It’s Fine', artist: 'Roan' },
+	{ src: 'hawaii.jpg', title: 'i know u been stressed', artist: 'bryce hase' },
+	{ src: 'hawaii.jpg', title: 'break away', artist: 'SB Hunt' },
+	{ src: 'hawaii.jpg', title: 'sorry not sorry', artist: 'H' },
+	{ src: 'hawaii.jpg', title: 'feel the same', artist: 'lil biscuit' }, ];
 
     return (
         <div className="new-releases">

@@ -10,6 +10,16 @@ function PersonalizedPlaylist() {
 	{ src: 'hawaii.jpg', title: 'time falls like moonlight', artist: 'City Girl' },
 	{ src: 'hawaii.jpg', title: 'Undo', artist: 'Rose the Soldier' },
 	{ src: 'hawaii.jpg', title: 'Talks With Kuv', artist: 'Kuvoor' },
+	{ src: 'hawaii.jpg', title: 'If I Die 2Day', artist: 'Rose the Soldier' },
+	{ src: 'hawaii.jpg', title: 'hurts', artist: 'rmtctrl' },
+	{ src: 'hawaii.jpg', title: 'time falls like moonlight', artist: 'City Girl' },
+	{ src: 'hawaii.jpg', title: 'Undo', artist: 'Rose the Soldier' },
+	{ src: 'hawaii.jpg', title: 'Talks With Kuv', artist: 'Kuvoor' },
+	{ src: 'hawaii.jpg', title: 'If I Die 2Day', artist: 'Rose the Soldier' },
+	{ src: 'hawaii.jpg', title: 'hurts', artist: 'rmtctrl' },
+	{ src: 'hawaii.jpg', title: 'time falls like moonlight', artist: 'City Girl' },
+	{ src: 'hawaii.jpg', title: 'Undo', artist: 'Rose the Soldier' },
+	{ src: 'hawaii.jpg', title: 'Talks With Kuv', artist: 'Kuvoor' },
     ];
 
     return (
