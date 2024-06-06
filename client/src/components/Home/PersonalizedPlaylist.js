@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../css/PersonalizedPlaylist.css';
 import Carousel from '../Carousel.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function PersonalizedPlaylist() {
     // Dummy data for playlist items
@@ -24,7 +26,7 @@ function PersonalizedPlaylist() {
 
     return (
         <div className="personalized-playlist">
-            <h2>Your Personalized Playlist</h2>
+            <h2>Your Personalized Playlist <FontAwesomeIcon icon={faArrowRight} /></h2>
             {/*<div className="playlist-items">
                 {playlists.map((playlist, index) => (
                     <div key={index} className="playlist-item">

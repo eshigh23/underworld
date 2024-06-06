@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../css/NewReleases.css';
 import Carousel from '../Carousel.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 function NewReleases() {
     const releases = [
@@ -22,7 +24,7 @@ function NewReleases() {
 
     return (
         <div className="new-releases">
-            <h2>New Releases By Artists You Follow</h2>
+            <h2>New Releases By Artists You Follow <FontAwesomeIcon icon={faArrowRight} /></h2>
             {/*<div className="release-items">
                 {releases.map((release, index) => (
                     <div key={index} className="release-item">

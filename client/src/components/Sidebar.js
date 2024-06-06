@@ -18,10 +18,12 @@ function Sidebar() {
         <aside className="sidebar">
             <div className="now-playing">
                 <h3>Now Playing</h3>
+		<img src={'hawaii.jpg'} alt="Album Art" className="sidebar-image" />
+		<Streamer />
                 <p>{nowPlaying.title}</p>
                 <p className="small">{nowPlaying.artist}</p>
             </div>
-	    <Streamer />
+
             <div className="recommended">
                 <h3>Recommended</h3>
                 {recommended.map((track, index) => (

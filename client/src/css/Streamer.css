@@ -4,7 +4,7 @@
     background-color: transparent; /* Transparent background */
     cursor: pointer;
     outline: none;
-    padding: 10px;
+    padding: 0px;
     color: #FFFFFF; /* Set the color of the icon */
 }
 .play-pause-btn:hover {

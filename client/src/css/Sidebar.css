@@ -2,9 +2,10 @@
     padding: 1rem;
     color: white;
     display: flex;
+    flex-shrink: 0;
     flex-direction: column; /* Stacks items vertically */
     align-items: center; /* Centers items horizontally in a flex container */
-    justify-content: flex-start; /* Centers items vertically in the container */
+    justify-content: flex-start; /*Items start at top vertically in the container */
     height: 100%; /* Ensures the sidebar takes full height of its container */
     background-color: #111111; /* Background color for visibility */
 }
@@ -28,4 +29,13 @@
 
 .small {
     font-size: 0.9rem;
+}
+
+.sidebar-image {
+  width: 63%; /* Set the width of the image */
+  height: auto; /* Set the height of the image */
+  border-radius: 15px; /* Adjust the border radius to make it rounded */
+  object-fit: cover; /* Ensure the image covers the area */
+  margin-bottom: 20px; /* Adjust the margin as necessary */
+  margin-top: 20px;
 }
