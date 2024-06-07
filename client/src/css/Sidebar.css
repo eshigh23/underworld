@@ -1,4 +1,6 @@
 .sidebar {
+    position: fixed;
+    right: 0;
     padding: 1rem;
     color: white;
     display: flex;
@@ -8,6 +10,7 @@
     justify-content: flex-start; /*Items start at top vertically in the container */
     height: 100%; /* Ensures the sidebar takes full height of its container */
     background-color: #111111; /* Background color for visibility */
+    overflow-y: auto;
 }
 .sidebar-item {
     margin-bottom: 10px; /* Adds space between items */
