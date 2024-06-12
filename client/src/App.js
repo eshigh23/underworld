@@ -5,6 +5,7 @@ import Header from './components/Header.js'
 import Home from './components/Home.js'
 import Landing from './components/Landing.js'
 import Explore from './components/Explore.js'
+import Signup from './components/Signup_Login/Signup.js';
 
 export default function App(){
 
@@ -53,6 +54,10 @@ export default function App(){
               <Route
                   path="/Landing"
                   element={<Landing />}
+              ></Route>
+              <Route
+                  path="/Signup"
+                  element={<Signup />}
               ></Route>
           </Routes>
         </div>
