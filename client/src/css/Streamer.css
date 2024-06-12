@@ -1,11 +1,26 @@
 .play-pause-btn {
+
     font-size: 36px; /* Larger font size for the icon */
-    border: none;
+    border-width: 5px;
+    width: 100%;
+    /* border-color: red;
+    border-style: solid; */
     background-color: transparent; /* Transparent background */
     cursor: pointer;
     outline: none;
     padding: 0px;
     color: #FFFFFF; /* Set the color of the icon */
+}
+
+/* uses flex display to center button */
+.btn-container{
+    display: flex;
+    border-width: 2px;
+    /* border-color: rgb(14, 97, 223); border for testing */
+    border-style: solid;
+    justify-content: center;
+    align-items: center;
+
 }
 .play-pause-btn:hover {
     opacity: 0.8;

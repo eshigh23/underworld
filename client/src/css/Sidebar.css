@@ -37,8 +37,16 @@
 .sidebar-image {
   width: 63%; /* Set the width of the image */
   height: auto; /* Set the height of the image */
+  border-width: 2px;
   border-radius: 15px; /* Adjust the border radius to make it rounded */
-  object-fit: cover; /* Ensure the image covers the area */
+  object-fit: cover; 
   margin-bottom: 20px; /* Adjust the margin as necessary */
   margin-top: 20px;
+}
+
+.streamer-holder{
+    display: flex;
+    border-width: 2px;
+    border-style: solid;
+    border-color: green;
 }

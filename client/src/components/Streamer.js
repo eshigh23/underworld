@@ -48,13 +48,13 @@ const Streamer = () => {
     };
 
     return (
-        <div>
+        <div className="btn-container">
             <button className="play-pause-btn" onClick={togglePlayPause}>
-		<FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
+			<FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
             </button>
-	    {/*<h1>
-		{song ? song : 'NULL'}
-		</h1>*/}
+			{/*<h1>
+			{song ? song : 'NULL'}
+			</h1>*/}
         </div>
     );
 };
