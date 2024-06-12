@@ -21,10 +21,10 @@ function Sidebar() {
                 <img src={'hawaii.jpg'} alt="Album Art" className="sidebar-image" />
                 <p>{nowPlaying.title}</p>
                 <p className="small">{nowPlaying.artist}</p>
-            </div>
-            <div className="streamer-holder">
+
                 <Streamer />
             </div>
+
             <div className="recommended">
                 <h3>Recommended</h3>
                 {recommended.map((track, index) => (

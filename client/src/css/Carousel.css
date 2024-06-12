@@ -44,7 +44,7 @@
     margin-top: 10px;
 }
 
-button {
+/* .carousel--button {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
@@ -57,10 +57,10 @@ button {
     z-index: 1;
 }
 
-button.prev {
+.carousel--button.prev {
     left: 10px;
 }
 
-button.next {
+.carousel--button.next {
     right: 10px;
-}
+} */
