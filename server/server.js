@@ -3,11 +3,15 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 const UserModel = require('./models/Users')
 const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
 
 
 const app = express()
 app.use(cors())
 app.use(express.json())
+
+// jwt secret key- should eventually be declared in .env and .env should be added to gitignore
+const secret_key = "secret"
 
 /* connect to mongo database (pw currently public lol)
 "mongodb+srv://<username>:<password>@<cluster>/<dbname>" */
@@ -24,27 +28,10 @@ app.get('/getUsers', (req, res) => {
         .catch(err => res.json(err))
 })
 
-/* called during signup
-queries database to check if username already in database */
-app.post('/checkUser', async (req, res) => {
-    const { username } = req.body   // extract username from request body
-    try {
-        const user = await UserModel.findOne({ username }) 
-        if (user) {
-            res.json({ success: false })
-        }
-        else{
-            res.json({ success: true, message: "No user exists, can proceed with signup." })
-        }
-    } catch (e) {
-        res.status(500).json({ success: false, message: "Could not query user from database for Signup" })
-    }
-})
 
+/* signup endpoint */
 app.post('/signupUser', async (req, res) => {
     const { username, password } = req.body // extract username and password from request body
-    console.log("user", username)
-    console.log("pw", password)
     try {
         const existingUser = await UserModel.findOne( {username })
         if (existingUser) {                 // use return res.json to make sure no further code is executed
@@ -56,6 +43,32 @@ app.post('/signupUser', async (req, res) => {
     }
     catch(e) {
         res.status(500).json({ success: false, message: "Could not create new user in database for Signup" })
+    }
+})
+
+/* login endpoint
+validates user in database, if authenticated creates jsonwebtoken for login sessions */
+app.post('/loginUser', async (req, res) => {
+    const { username, password } = req.body;
+    console.log( username, password )
+    try {
+        const existingUser = await UserModel.findOne({ username })
+        if (!existingUser){
+            return res.json({ success: false, message: "User not found."})
+        }
+        else if (existingUser.password == password) {
+            // user validated
+            // create jwt token and send to client
+            const token = jwt.sign({ id: existingUser._id }, secret_key, { expiresIn: '1w' })   // create token
+            res.json({ success: true, message: "You are logged in!", token: token })    // return token back to client
+
+        }
+        else {
+            return res.json({ success: false, message: "Incorrect login credentials."})
+        }
+    }
+    catch (e) {
+        console.log("Failure at ./LoginUser endpoint", e)
     }
 })
 

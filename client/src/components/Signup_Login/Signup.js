@@ -1,14 +1,15 @@
 import axios from 'axios';
 import React, {useState} from 'react'
+import { useNavigate } from 'react-router-dom';
 
 export default function Signup(){
 
     const [notification, setNotification] = useState(null)
-
     const [formData, setFormData] = useState({
         username: '',
         password: ''
     })
+    const navigate = useNavigate(); // used for redirect on successful login
 
     function handleChange(e){
         const { name, value } = e.target;
@@ -16,7 +17,6 @@ export default function Signup(){
             ...formData,
             [name]: value
         })
-
     }
     
     /* on form submit, make call to API endpoint 'signup'
@@ -28,7 +28,18 @@ export default function Signup(){
         try {
             const response = await axios.post('http://localhost:5002/signupUser', { username: formData.username, password: formData.password })
             if (response.data.success) {
-                setNotification("You have signed up!")
+                setNotification("Successfully created account.")
+                // log in the user on successful signup and redirect
+                try {
+                    const loginResponse = await axios.post('http://localhost:5002/loginUser', { username: formData.username, password: formData.password })
+                    if (loginResponse.data.success){
+                        localStorage.setItem("token", loginResponse.data.token)
+                        console.log("sanity check: user logged in upon signup")
+                        navigate('/')
+                    }
+                } catch (e) {
+                    console.error("Could not login user upon signup")
+                }
             }
             setNotification(response.data.message)  // set success or failure message (received from signup endpoint)
         } catch (e) {

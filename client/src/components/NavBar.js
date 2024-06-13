@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../css/NavBar.css';  // Importing CSS for styling
 
 function NavBar() {
+    const [user, setUser] = useState(null)
+
+    // useEffect(async () => {
+    //     const token = localStorage.getItem("token")
+    //     try {
+    //         const curUser = await UserModel.findOne( { _id: token })
+    //         if (curUser){
+    //             setUser(curUser)
+    //         }
+    //         else {
+    //             console.log("The user in NavBar.js is null")
+    //         }
+    //     } catch (e) {
+    //         console.error("Error fetching user in NavBar.js", )
+    //     }
+    // }, [])
+
     return (
         <nav className="navbar">
             <ul className="nav-links">

@@ -6,6 +6,7 @@ import Home from './components/Home.js'
 import Landing from './components/Landing.js'
 import Explore from './components/Explore.js'
 import Signup from './components/Signup_Login/Signup.js';
+import Login from './components/Signup_Login/Login.js'
 
 export default function App(){
 
@@ -58,6 +59,10 @@ export default function App(){
               <Route
                   path="/Signup"
                   element={<Signup />}
+              ></Route>
+              <Route
+                path="/Login"
+                element={<Login />}
               ></Route>
           </Routes>
         </div>
