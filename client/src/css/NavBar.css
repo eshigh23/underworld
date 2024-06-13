@@ -22,6 +22,11 @@
     text-decoration: none;
 }
 
+.nav-welcome {
+    margin-left: auto;
+    margin-right: 15%;
+}
+
 .search-bar input {
     padding: 0.5rem;
     width: 200px;

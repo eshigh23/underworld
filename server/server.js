@@ -28,6 +28,23 @@ app.get('/getUsers', (req, res) => {
         .catch(err => res.json(err))
 })
 
+/* fetch logged-in user */
+app.post('/getUser', async (req, res) => {
+    const { token } = req.body
+    try {
+        const decoded = jwt.verify(token, secret_key)
+        const user = await UserModel.findOne({ _id: decoded.id })
+        if (user) {
+            res.json({ success: true, user: user})
+        }
+        else {
+            res.json({ success: false })
+        }
+    } catch (e) {
+        console.error(e)
+    }
+})
+
 
 /* signup endpoint */
 app.post('/signupUser', async (req, res) => {
