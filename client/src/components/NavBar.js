@@ -49,12 +49,12 @@ function NavBar() {
                 { user && <li><a href="#my-playlist">MY PLAYLIST</a></li> }
                 <li><a href="#popular">POPULAR</a></li>
                 { user && <li><a href="#account">MY ACCOUNT</a></li> }
+                { user && <li><p onClick={handleLogout}> LOGOUT </p></li>}
                 { !user && <li><a href="http://localhost:3000/login"> LOGIN/SIGNUP </a></li>}
             </ul>
             { user ? (
                 <div className="nav-welcome">
-                    <p className="nav-item"> Welcome, {user.username} </p>
-                    <p className="nav-item" onClick={handleLogout}> LOGOUT </p>
+                    {/* <p className="nav-item"> Welcome, {user.username} </p> */}
                 </div> ) :
                 <ul className="nav-links">
                     

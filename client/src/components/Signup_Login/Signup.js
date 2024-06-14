@@ -53,12 +53,12 @@ export default function Signup(){
         { notification ? notification : ""}
 
         <div className="signuplogin-box">
-        <div className="signuplogin-black">SIGNUP</div>
+        <div className="signuplogin-black">SIGN-UP</div>
             <form onSubmit={handleSubmit}>
             <br></br>
                 <label> 
                     <input
-                        placeholder="username"
+                        placeholder="Username"
                         type="text"
                         name="username"
                         value={formData.username}
@@ -69,7 +69,7 @@ export default function Signup(){
                 <br></br>
                 <label> 
                     <input
-                        placeholder="password"
+                        placeholder="Password"
                         type="password"
                         name="password"
                         value={formData.password}
@@ -79,6 +79,7 @@ export default function Signup(){
                 </label>
                 <button className="signuplogin-button">SUBMIT</button>
             </form>
+            <p>Already have an account? Log in <span> <a href="http://localhost:3000/login">here.</a></span></p>
             </div>
         </div>
     )

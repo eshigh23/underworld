@@ -26,11 +26,20 @@
     text-decoration: none;
 }
 
-.nav-welcome {
+.nav-links p {
+    color: white;
+    margin: 0px;
+}
+
+.nav-links p:hover{
+    cursor: pointer;
+}
+
+/* .nav-welcome {
     display: flex;
     margin-left: auto;
     margin-right: 5%;
-}
+} */
 
 .search-bar input {
     padding: 0.5rem;

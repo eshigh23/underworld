@@ -69,6 +69,7 @@ export default function Login(){
                     </label>
                     <button className="signuplogin-button"> SUBMIT </button>
                 </form>
+                <p>Don't have an account yet? Sign up <span> <a href="http://localhost:3000/signup">here.</a></span></p>
             </div>
         </div>
     )

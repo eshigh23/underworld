@@ -4,6 +4,10 @@
     padding: 1rem;
 }
 
+.personalized-playlist h3 {
+    margin: 0px;
+}
+
 .playlist-items {
     display: flex;
     overflow-x: scroll;
