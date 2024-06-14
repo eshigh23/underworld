@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, {useState} from 'react'
 import { useNavigate } from 'react-router-dom';
+import '../../css/Signup_Login.css';  // Importing CSS for styling
 
 export default function Signup(){
 
@@ -48,12 +49,16 @@ export default function Signup(){
     }
     
     return(
-        <>
+        <div className="signuplogin-container">
         { notification ? notification : ""}
+
+        <div className="signuplogin-box">
+        <div className="signuplogin-black">SIGNUP</div>
             <form onSubmit={handleSubmit}>
             <br></br>
-                <label> Username:
+                <label> 
                     <input
+                        placeholder="username"
                         type="text"
                         name="username"
                         value={formData.username}
@@ -62,8 +67,9 @@ export default function Signup(){
                     />
                 </label>
                 <br></br>
-                <label> Password:
+                <label> 
                     <input
+                        placeholder="password"
                         type="password"
                         name="password"
                         value={formData.password}
@@ -71,9 +77,10 @@ export default function Signup(){
                         required={true}
                     />
                 </label>
-                <button>Signup</button>
+                <button className="signuplogin-button">SUBMIT</button>
             </form>
-        </>
+            </div>
+        </div>
     )
 
 }

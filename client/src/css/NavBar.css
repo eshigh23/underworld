@@ -17,14 +17,19 @@
     padding: 0 20px;
 }
 
+.nav-item {
+    margin: 0px 10px 0px 10px;
+}
+
 .nav-links a {
     color: white;
     text-decoration: none;
 }
 
 .nav-welcome {
+    display: flex;
     margin-left: auto;
-    margin-right: 15%;
+    margin-right: 5%;
 }
 
 .search-bar input {
