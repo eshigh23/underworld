@@ -2,7 +2,6 @@ import React, { useEffect, useState} from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import './App.css';
 import axios from 'axios'
-import Header from './components/Header.js'
 import Home from './components/Home.js'
 import Landing from './components/Landing.js'
 import Explore from './components/Explore.js'
