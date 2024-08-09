@@ -33,6 +33,10 @@ function NavBar() {
         fetchUser();
     }, [])
 
+    function handleClick() {
+        navigate(`/profile/${user.username}`)
+    }
+
     function handleLogout(){
         localStorage.removeItem('token')
         // setIsLoggedIn(false)
@@ -54,7 +58,7 @@ function NavBar() {
             </ul>
             { user ? (
                 <div className="nav-welcome">
-                    {/* <p className="nav-item"> Welcome, {user.username} </p> */}
+                    <p className="nav-item" onClick={handleClick}> Welcome, {user.username} </p>
                 </div> ) :
                 <ul className="nav-links">
                     
