@@ -6,7 +6,7 @@ import "../css/Streamer.css";
 
 let sound;
 
-const Streamer = () => {
+const Streamer = ( {src} ) => {
     var [isPlaying, setIsPlaying] = useState(false);
 
     var [song, setSong] = useState(null);
@@ -14,7 +14,7 @@ const Streamer = () => {
     useEffect(() => {
 	// Initialize Howl instance
 	sound = new Howl({
-	    src: ['audio.wav'],
+	    src: [src],
 	    html5: true,
 	    onend: () => {
 		console.log('Audio finished playing');

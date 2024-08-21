@@ -22,7 +22,7 @@ function Sidebar() {
                 <p>{nowPlaying.title}</p>
                 <p className="small">{nowPlaying.artist}</p>
 
-                <Streamer />
+                <Streamer src="audio.wav"/>
             </div>
 
             <div className="recommended">
