@@ -5,6 +5,12 @@ const UserSchema = new mongoose.Schema({
     // _id: mongoose.Schema.Types.ObjectId, // Define _id field explicitly
     username: String,
     password: String,
+    file: {
+        filename: String,
+        path: String,
+        mimetype: String,
+        size: Number
+    }
 })
 
 /* define and export UserModel variable

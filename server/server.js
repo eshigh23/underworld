@@ -4,6 +4,8 @@ const cors = require('cors')
 const UserModel = require('./models/Users')
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
+const multer = require('multer')
+const path = require('path')
 
 
 const app = express()
@@ -26,6 +28,61 @@ app.get('/getUsers', (req, res) => {
     UserModel.find()
         .then(users => (res.json(users)))
         .catch(err => res.json(err))
+})
+
+// set up storage with multer library to create file path stored on server
+const storage = multer.diskStorage({
+    destination:(req, file, cb) => {
+        cb(null, 'uploads/');
+    },
+    filename: (req, file, cb) => {
+        cb(null, Date.now() + path.extname(file.originalname));
+    }
+})
+
+// initialize multer (library for easy upload storage)
+const upload = multer({ storage: storage }).single('file')
+
+
+// upload song endpoint, stores song in server and adds it to user database
+app.post('/uploadFile', async (req, res) => {
+    upload(req, res, async function(err) {
+
+        if (err) {
+            return res.status(500).send("Error uploading file")
+        }
+
+        const fileInfo = {
+            filename: req.file.filename,    // fields automatically created when file is uploaded with multer
+            path: req.file.path,
+            mimetype: req.file.mimetype,
+            size: req.file.size
+        };
+
+        try {
+            const user = await UserModel.findOne({username: req.body.username});
+            if (!user) {
+                return res.status(400).json({status: "failure", message:"User not found"})
+            }
+
+            // save file to UserModel "file" field in database
+            user.file = fileInfo;
+            await user.save()
+            res.status(200).json({status: "success", message: "File successfuly added to user's database."})
+
+        }
+        catch(e) {
+            console.log("Database error:", e)
+            res.status(500).send("Error saving file information.")
+        }
+        
+        // res.status(200).json({
+        //     message: "Success",
+        //     fileName: fileInfo.filename,
+        //     filePath: fileInfo.path
+        // })
+    })
+
 })
 
 /* fetch logged-in user */
